@@ -52,12 +52,28 @@ body {
   margin: 0;
   padding: 0; }
 
+.clearfix {
+  content: '';
+  display: table;
+  clear: both; }
+
 .header {
   height: 87px;
   background-color: rgba(255, 255, 255, 0.2);
   position: absolute;
   width: 100%;
-  vertical-align: middle; }
+  vertical-align: middle;
+  line-height: 87px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+          justify-content: space-between; }
+
+.header__menu {
+  display: none; }
 
 .header__logo {
   font-family: OdinRounded, Arial;
@@ -68,7 +84,17 @@ body {
   display: inline-block; }
 
 .header__logo-dot {
-  font-size: 84px; }
+  font-size: 84px;
+  line-height: 42px; }
+
+.header__search {
+  background-image: url(../img/search_icon.png);
+  width: 30px;
+  height: 31px;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 25px 25px 0 0; }
 
 .main__container {
   display: -webkit-box;
@@ -113,7 +139,7 @@ body {
   margin: 0; }
 
 .main__btn {
-  font-family: Open Sans Condensed;
+  font-family: 'Open Sans Condensed', Arial, sans-serif;
   font-size: 25px;
   line-height: 70px;
   text-decoration: none;
@@ -132,6 +158,7 @@ body {
 
 .footer__left-panel {
   flex-basis: calc(50% - 86px);
+  flex-shrink: 0;
   position: relative;
   padding: 35px 43px; }
 
@@ -192,7 +219,9 @@ body {
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: justify;
-          justify-content: space-between; }
+          justify-content: space-between;
+  margin: 0 auto;
+  flex-wrap: wrap; }
 
 .menu__leftside,
 .menu__rightside {
@@ -260,3 +289,99 @@ body {
   background-image: url(../img/facebook.png);
   width: 14px;
   height: 25px; }
+
+@media screen and (max-width: 1000px) {
+  .footer__center-panel {
+    padding: 100px 5px; } }
+
+@media screen and (max-width: 750px) {
+  .header {
+    display: block; }
+  .header__menu {
+    display: inline-block;
+    background-image: url(../img/menu.png);
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    width: 34px;
+    height: 31px;
+    margin-right: 6px;
+    margin-left: 30px;
+    padding: 0; }
+  .header__menu:focus {
+    outline: none; }
+  .header__logo {
+    font-size: 50px;
+    margin-left: 0; }
+  .header__logo-dot {
+    font-size: 100px; }
+  .header__search {
+    float: right; }
+  .main__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column; }
+  .main__bikes {
+    height: 100vw; }
+  .main__title {
+    font-size: 80px; }
+  .main__sort {
+    font-size: 60px; }
+  .main__btn {
+    font-size: 30px;
+    line-height: 80px;
+    margin-top: 40px; }
+  .footer,
+  .footer__menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column; }
+  .menu__leftside,
+  .menu__rightside {
+    text-align: center;
+    font-size: 37px;
+    line-height: 76px; }
+  .footer__left-panel {
+    text-align: center; }
+  .footer__logo {
+    font-size: 54px;
+    line-height: 40px; }
+  .footer__logo-dot {
+    font-size: 107px;
+    line-height: 47px; }
+  .footer__text {
+    font-size: 33px;
+    line-height: 47px; }
+  .footer__link {
+    font-size: 33px;
+    line-height: 47px; }
+  .footer__copyright {
+    font-size: 33px;
+    line-height: 47px; }
+  .footer__left-panel::after,
+  .footer__center-panel::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: auto;
+    bottom: 0;
+    right: auto;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 75%;
+    height: 2px;
+    background-color: #4d5362; }
+  .footer__center-panel {
+    padding: 30px 50px; }
+  .footer__right-panel {
+    padding-bottom: 40px; }
+  .footer__newsletter {
+    font-size: 35px;
+    line-height: 70px;
+    margin-bottom: 20px;
+    display: inline-block; }
+  .footer__input {
+    display: block;
+    margin: 0 auto;
+    font-size: 30px;
+    line-height: 70px;
+    width: 65%; } }
