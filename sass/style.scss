@@ -330,6 +330,13 @@ body{
   height: 25px;
 }
 
+@media screen and (max-width: 1920px){
+  .header{
+    height: 180px;
+    line-height: 180px;
+  }
+}
+
 @media screen and (max-width: 1000px){
   .footer__center-panel{
     padding: 100px 5px;
